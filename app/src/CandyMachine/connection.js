@@ -454,7 +454,7 @@ async function awaitTransactionSignatureConfirmation(
             slot: context.slot,
             confirmations: 0,
           };
-          if (result.err) {
+          if (result.err === null) {
             console.log('Rejected via websocket', result.err);
             reject(status);
           } else {
